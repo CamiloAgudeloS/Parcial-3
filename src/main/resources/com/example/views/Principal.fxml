@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" styleClass="principal-root" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcial3.Controllers.PrincipalController">
+
+
+    <top>
+        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" styleClass="barra-superior" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnPacientes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onPacientes" prefHeight="50.0" prefWidth="120.0" styleClass="btn-menu" text="Pacientes" HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnMedicos" mnemonicParsing="false" onAction="#onMedicos" prefHeight="50.0" prefWidth="120.0" styleClass="btn-menu" text="Medicos" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets left="50.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="btnCitas" mnemonicParsing="false" onAction="#onCitas" prefHeight="50.0" prefWidth="120.0" styleClass="btn-menu" text="Citas">
+                    <HBox.margin>
+                        <Insets left="50.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+
+
+    <center>
+        <StackPane fx:id="contenedorCentro" prefHeight="620.0" prefWidth="826.0" styleClass="contenedor-centro" BorderPane.alignment="CENTER" />
+    </center>
+
+
+    <bottom>
+        <HBox prefHeight="0.0" prefWidth="0.0" styleClass="barra-inferior" BorderPane.alignment="CENTER" />
+    </bottom>
+
+
+    <left>
+        <VBox alignment="CENTER" prefHeight="454.0" prefWidth="130.0" styleClass="panel-lateral" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="titulo-lateral" text="Clinica Central" wrapText="true" />
+            </children>
+        </VBox>
+    </left>
+</BorderPane>
