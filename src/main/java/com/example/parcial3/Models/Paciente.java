@@ -15,7 +15,7 @@ public class Paciente extends Persona{
     }
 
     public void setCarnetPaciente(String carnetPaciente) {
-        this.carnetPaciente = Paciente.this.carnetPaciente;
+        this.carnetPaciente = carnetPaciente;
     }
 
     public String getEnfermedades() {

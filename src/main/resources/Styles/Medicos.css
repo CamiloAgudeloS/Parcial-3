@@ -1,0 +1,117 @@
+
+
+.clientes-root {
+    -fx-background-color: #f1f6fc;                /* Azul muy claro */
+    -fx-padding: 5;
+    -fx-spacing:20;
+}
+
+
+.formulario-panel {
+    -fx-background-color: white;
+    -fx-spacing: 12;
+    -fx-padding: 5;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);
+}
+
+
+.tabla-panel {
+    -fx-background-color: white;
+    -fx-spacing: 20;
+    -fx-padding: 5;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);
+}
+
+
+
+.titulo-formulario {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3c72;
+}
+
+.titulo-tabla {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3c72;
+}
+
+.label-campo {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12345b;
+}
+
+
+
+.campo-texto {
+    -fx-background-color: #f3f7ff;
+    -fx-background-radius: 10;
+    -fx-padding: 7;
+    -fx-border-color: #c6d7f3;
+    -fx-border-radius: 10;
+    -fx-text-fill: #12263a;
+}
+
+.campo-texto:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #4a90e2;
+}
+
+
+
+.botonera-formulario .button {
+    -fx-background-color: linear-gradient(to right, #4a90e2, #357abd);
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 8 18 8 18;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.botonera-formulario .button:hover {
+    -fx-background-color: linear-gradient(to right, #5aa0f2, #3d86cc);
+}
+
+.btn-eliminar {
+    -fx-background-color: #d9534f;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-padding: 10 20;
+}
+
+.btn-eliminar:hover {
+    -fx-background-color: #c9302c;
+}
+
+
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #d0d7e4;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.table-view .column-header {
+    -fx-background-color: #e8effb;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1e3c72;
+}
+
+.table-view .table-row-cell {
+    -fx-padding: 10;
+    -fx-font-size: 13px;
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #c9dcf8;
+}

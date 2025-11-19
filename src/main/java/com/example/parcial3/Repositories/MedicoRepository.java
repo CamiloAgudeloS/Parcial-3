@@ -22,7 +22,7 @@ public class MedicoRepository {
 
     // Datos de prueba
     private void cargarDatosEjemplo() {
-        medicos.add(new Medico("Carlos","Gonzales","45","1048294983","10939593759","405496894"));
+        medicos.add(new Medico("Carlos","Gonzales","45","1048294983","Cirujano","405496894"));
 
 
     }

@@ -1,0 +1,152 @@
+/* =========================================================
+   ESTILOS – VISTA PACIENTES (ARMONIZADA)
+   ========================================================= */
+
+/* Fondo del HBox principal */
+.clientes-root {
+    -fx-background-color: #F6FAFC;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+}
+
+/* ---------------------------------------------------------
+   PANEL IZQUIERDO: FORMULARIO
+   --------------------------------------------------------- */
+.formulario-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0, 0, 3);
+}
+
+/* Título del formulario */
+.titulo-formulario {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A73E8;
+}
+
+/* Labels */
+.label-campo {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2F3E46;
+}
+
+/* Campos de texto */
+.campo-texto {
+    -fx-background-color: #F6FAFC;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #A8C7FF;
+    -fx-border-width: 1.2;
+    -fx-padding: 6 10;
+    -fx-font-size: 14px;
+}
+
+.campo-texto:focused {
+    -fx-border-color: #1A73E8;
+    -fx-background-color: #FFFFFF;
+}
+
+/* Botonera del formulario */
+.botonera-formulario {
+    -fx-padding: 10;
+}
+
+/* Botones del formulario */
+.btn-formulario {
+    -fx-background-color: linear-gradient(to bottom, #A8C7FF, #8BB5FF);
+    -fx-text-fill: #2F3E46;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255,255,255,0.5);
+    -fx-border-width: 1.3;
+    -fx-cursor: hand;
+}
+
+.btn-formulario:hover {
+    -fx-background-color: rgba(255,255,255,0.3);
+}
+
+.btn-formulario:pressed {
+    -fx-background-color: rgba(255,255,255,0.45);
+}
+
+/* ---------------------------------------------------------
+   PANEL DERECHO: TABLA
+   --------------------------------------------------------- */
+.tabla-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 25;
+    -fx-background-radius: 15;
+    -fx-spacing: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0, 0, 3);
+    -fx-alignment: center;
+}
+
+/* Título tabla */
+.titulo-tabla {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A73E8;
+}
+
+/* Tabla de pacientes */
+.table-view.tabla-clientes {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #A8C7FF;
+    -fx-border-width: 1.5;
+}
+
+/* Encabezados */
+.table-view .column-header-background {
+    -fx-background-color: #E3E9EF;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header {
+    -fx-text-fill: #2F3E46;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Filas */
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #F6FAFC;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #A8C7FF;
+    -fx-text-fill: #000000;
+}
+
+/* ---------------------------------------------------------
+   BOTÓN ELIMINAR
+   --------------------------------------------------------- */
+.btn-eliminar {
+    -fx-background-color: #FF7A7A;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.btn-eliminar:hover {
+    -fx-background-color: #FF5454;
+}
+
+.btn-eliminar:pressed {
+    -fx-background-color: #D84040;
+}

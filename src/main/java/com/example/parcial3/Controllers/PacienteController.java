@@ -42,8 +42,8 @@ public class PacienteController {
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
-        colEdad.setCellValueFactory(new PropertyValueFactory<>("direccion"));
-        colCarnet.setCellValueFactory(new PropertyValueFactory<>("carnet"));
+        colEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
+        colCarnet.setCellValueFactory(new PropertyValueFactory<>("carnetPaciente"));
         colEnfermedades.setCellValueFactory(new PropertyValueFactory<>("enfermedades"));
 
 
@@ -94,7 +94,7 @@ public class PacienteController {
         listaPacientes.add(nuevo);
         limpiarCampos();
 
-        mostrarAlerta("Éxito", "Cliente registrado correctamente.", Alert.AlertType.INFORMATION);
+        mostrarAlerta("Éxito", "Paciente registrado correctamente.", Alert.AlertType.INFORMATION);
     }
 
     @FXML
@@ -117,7 +117,7 @@ public class PacienteController {
         limpiarCampos();
         pacienteseleccionado = null;
 
-        mostrarAlerta("Éxito", "Cliente actualizado correctamente.", Alert.AlertType.INFORMATION);
+        mostrarAlerta("Éxito", "Paciente  actualizado correctamente.", Alert.AlertType.INFORMATION);
     }
 
     @FXML
@@ -125,14 +125,14 @@ public class PacienteController {
         Paciente seleccionado = tablaPaciente.getSelectionModel().getSelectedItem();
 
         if (seleccionado == null) {
-            mostrarAlerta("Error", "Seleccione un cliente para eliminar.", Alert.AlertType.WARNING);
+            mostrarAlerta("Error", "Seleccione un paciente para dar de alta.", Alert.AlertType.WARNING);
             return;
         }
 
         pacienterepository.darAltaPaciente(seleccionado);
         listaPacientes.remove(seleccionado);
 
-        mostrarAlerta("Éxito", "Cliente eliminado correctamente.", Alert.AlertType.INFORMATION);
+        mostrarAlerta("Éxito", "Paciente  dado de alrta correctamente.", Alert.AlertType.INFORMATION);
     }
 
     @FXML
@@ -147,13 +147,17 @@ public class PacienteController {
         txtApellido.clear();
         txtDocumento.clear();
         txtEdad.clear();
+        txtCarnet.clear();
+        txtEnfermedades.clear();
     }
 
     private boolean validarCampos() {
         if (txtNombre.getText().isEmpty() ||
                 txtApellido.getText().isEmpty() ||
                 txtDocumento.getText().isEmpty() ||
-                txtEdad.getText().isEmpty()) {
+                txtEdad.getText().isEmpty()||
+                 txtCarnet.getText().isEmpty()||
+                txtEnfermedades.getText().isEmpty()){
 
             mostrarAlerta("Campos vacíos", "Todos los campos marcados con * son obligatorios.",
                     Alert.AlertType.WARNING);

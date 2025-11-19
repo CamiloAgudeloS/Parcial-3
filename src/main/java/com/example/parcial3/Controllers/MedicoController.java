@@ -1,7 +1,7 @@
 package com.example.parcial3.Controllers;
 
-import com.example.parcial3.Models.Paciente;
-import com.example.parcial3.Repositories.Pacienterepository;
+import com.example.parcial3.Models.Medico;
+import com.example.parcial3.Repositories.MedicoRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,53 +22,53 @@ public class MedicoController {
     @FXML private TextField txtTarjetaProfesional;
 
 
-    @FXML private TableView<Paciente> tablaPaciente;
-    @FXML private TableColumn<Paciente, String> colNombre;
-    @FXML private TableColumn<Paciente, String> colApellido;
-    @FXML private TableColumn<Paciente, String> colDocumento;
-    @FXML private TableColumn<Paciente, String> colEspecialidad;
-    @FXML private TableColumn<Paciente, String> colTarjetaProfesioanl;
-    @FXML private TableColumn<Paciente, String> ColEdad;
+    @FXML private TableView<Medico> tablaMedico;
+    @FXML private TableColumn<Medico, String> colNombre;
+    @FXML private TableColumn<Medico, String> colApellido;
+    @FXML private TableColumn<Medico, String> colDocumento;
+    @FXML private TableColumn<Medico, String> colEspecialidad;
+    @FXML private TableColumn<Medico, String> colTarjetaProfesional;
+    @FXML private TableColumn<Medico, String> colEdad;
 
-    private Pacienterepository pacienterepository;
-    private ObservableList<Paciente> listaPacientes;
+    private MedicoRepository medicorepository;
+    private ObservableList<Medico> listaMedicos;
 
-    private Paciente pacienteseleccionado = null;
+    private Medico medicoseleccionado = null;
 
     @FXML
     public void initialize() {
-        pacienterepository = Pacienterepository.getInstancia();
+        medicorepository = MedicoRepository.getInstancia();
 
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
-        colEdad.setCellValueFactory(new PropertyValueFactory<>("direccion"));
-        colEspecialidad.setCellValueFactory(new PropertyValueFactory<>("carnet"));
-        colTarjetaProfesioanl.setCellValueFactory(new PropertyValueFactory<>("enfermedades"));
+        colEdad.setCellValueFactory(new PropertyValueFactory<>("edad"));
+        colEspecialidad.setCellValueFactory(new PropertyValueFactory<>("especialidad"));
+        colTarjetaProfesional.setCellValueFactory(new PropertyValueFactory<>("tarjetaProfesional"));
 
 
         // Cargar datos iniciales
-        listaPacientes = FXCollections.observableArrayList(pacienterepository.getPacientes());
-        tablaPaciente.setItems(listaPacientes);
-        tablaPaciente.setItems(listaPacientes);
+        listaMedicos = FXCollections.observableArrayList(medicorepository.getMedicos());
+        tablaMedico.setItems(listaMedicos);
+        tablaMedico.setItems(listaMedicos);
         // Detectar selección
-        tablaPaciente.getSelectionModel().selectedItemProperty().addListener(
+        tablaMedico.getSelectionModel().selectedItemProperty().addListener(
                 (obs, oldSel, newSel) -> {
                     if (newSel != null) {
-                        pacienteseleccionado = newSel;
+                        medicoseleccionado = newSel;
                         cargarCamposPaciente(newSel);
                     }
                 }
         );
     }
 
-    private void cargarCamposPaciente(Paciente c) {
+    private void cargarCamposPaciente(Medico c) {
         txtNombre.setText(c.getNombre());
         txtApellido.setText(c.getApellido());
         txtDocumento.setText(c.getDocumento());
         txtEdad.setText(c.getEdad());
-        txtCarnet.setText(c.getCarnetPaciente());
-        txtTarjetaProfesional.setText(c.getEnfermedades());
+        txtEspecialidad.setText(c.getEspecialidad());
+        txtTarjetaProfesional.setText(c.getTarjetaProfesional());
     }
 
     @FXML
@@ -79,19 +79,19 @@ public class MedicoController {
         String apellido = txtApellido.getText();
         String documento = txtDocumento.getText();
         String edad = txtDocumento.getText();
-        String carnet=txtCarnet.getText();
-        String enfermedades= txtTarjetaProfesional.getText();
+        String especialidad=txtEspecialidad.getText();
+        String tarjetaProfesional= txtTarjetaProfesional.getText();
 
         // Evitar duplicados por documento
-        if (pacienterepository.buscarPorDocumento(documento) != null) {
-            mostrarAlerta("Error", "Ya existe un paciente con ese documento.", Alert.AlertType.ERROR);
+        if (medicorepository.buscarPorDocumento(documento) != null) {
+            mostrarAlerta("Error", "Ya existe un Medico  con ese documento.", Alert.AlertType.ERROR);
             return;
         }
 
-        Paciente nuevo = new Paciente(nombre, apellido, documento, edad,carnet,enfermedades);
+        Medico nuevo = new Medico(nombre, apellido, documento, edad,especialidad,tarjetaProfesional);
 
-        pacienterepository.registrarPaciente(nuevo);
-        listaPacientes.add(nuevo);
+        medicorepository.registrarMedico(nuevo);
+        listaMedicos.add(nuevo);
         limpiarCampos();
 
         mostrarAlerta("Éxito", "Cliente registrado correctamente.", Alert.AlertType.INFORMATION);
@@ -99,47 +99,47 @@ public class MedicoController {
 
     @FXML
     private void onActualizar() {
-        if (pacienteseleccionado == null) {
+        if (medicoseleccionado == null) {
             mostrarAlerta("Error", "Seleccione un cliente para actualizar.", Alert.AlertType.WARNING);
             return;
         }
 
         if (!validarCampos()) return;
 
-        pacienteseleccionado.setNombre(txtNombre.getText());
-        pacienteseleccionado.setApellido(txtApellido.getText());
-        pacienteseleccionado.setDocumento(txtDocumento.getText());
-        pacienteseleccionado.setEdad(txtEdad.getText());
-        pacienteseleccionado.setCarnetPaciente(txtCarnet.getText());
-        pacienteseleccionado.setEnfermedades(txtTarjetaProfesional.getText());
+        medicoseleccionado.setNombre(txtNombre.getText());
+        medicoseleccionado.setApellido(txtApellido.getText());
+        medicoseleccionado.setDocumento(txtDocumento.getText());
+        medicoseleccionado.setEdad(txtEdad.getText());
+        medicoseleccionado.setEspecialidad(txtEspecialidad.getText());
+        medicoseleccionado.setTarjetaProfesional(txtTarjetaProfesional.getText());
 
-        tablaPaciente.refresh();
+        tablaMedico.refresh();
         limpiarCampos();
-        pacienteseleccionado = null;
+        medicoseleccionado = null;
 
-        mostrarAlerta("Éxito", "Cliente actualizado correctamente.", Alert.AlertType.INFORMATION);
+        mostrarAlerta("Éxito", "Medico actualizado correctamente.", Alert.AlertType.INFORMATION);
     }
 
     @FXML
     private void onEliminar() {
-        Paciente seleccionado = tablaPaciente.getSelectionModel().getSelectedItem();
+        Medico seleccionado = tablaMedico.getSelectionModel().getSelectedItem();
 
         if (seleccionado == null) {
-            mostrarAlerta("Error", "Seleccione un cliente para eliminar.", Alert.AlertType.WARNING);
+            mostrarAlerta("Error", "Seleccione un medico para eliminar.", Alert.AlertType.WARNING);
             return;
         }
 
-        pacienterepository.darAltaPaciente(seleccionado);
-        listaPacientes.remove(seleccionado);
+        medicorepository.eliminarMedico(seleccionado);
+        listaMedicos.remove(seleccionado);
 
-        mostrarAlerta("Éxito", "Cliente eliminado correctamente.", Alert.AlertType.INFORMATION);
+        mostrarAlerta("Éxito", "Medico eliminado correctamente.", Alert.AlertType.INFORMATION);
     }
 
     @FXML
     private void onLimpiar() {
         limpiarCampos();
-        tablaPaciente.getSelectionModel().clearSelection();
-        pacienteseleccionado = null;
+        tablaMedico.getSelectionModel().clearSelection();
+        medicoseleccionado = null;
     }
 
     private void limpiarCampos() {
@@ -147,13 +147,17 @@ public class MedicoController {
         txtApellido.clear();
         txtDocumento.clear();
         txtEdad.clear();
+        txtEspecialidad.clear();
+        txtTarjetaProfesional.clear();
     }
 
     private boolean validarCampos() {
         if (txtNombre.getText().isEmpty() ||
                 txtApellido.getText().isEmpty() ||
                 txtDocumento.getText().isEmpty() ||
-                txtEdad.getText().isEmpty()) {
+                txtEdad.getText().isEmpty() ||
+                txtEspecialidad.getText().isEmpty()||
+                txtTarjetaProfesional.getText().isEmpty()) {
 
             mostrarAlerta("Campos vacíos", "Todos los campos marcados con * son obligatorios.",
                     Alert.AlertType.WARNING);

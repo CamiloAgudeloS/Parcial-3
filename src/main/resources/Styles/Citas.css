@@ -1,0 +1,137 @@
+
+
+/* Fondo principal */
+.citas-root {
+    -fx-background-color: #F6FAFC;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+}
+
+
+.formulario-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 17;
+    -fx-spacing: 15;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 15, 0, 0, 4);
+}
+
+/* Título grande */
+.titulo-principal {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill:  #1A73E8;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #2F3E46;
+    -fx-font-weight: bold;
+}
+
+/* Campo donde se muestra fecha/hora */
+.campo-mostrado {
+    -fx-background-color: #EFF5FF;
+    -fx-padding: 8 12;
+    -fx-background-radius: 8;
+    -fx-font-size: 15px;
+    -fx-text-fill: #1A73E8;
+    -fx-border-color: #A8C7FF;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* Campos de texto */
+.text-field {
+    -fx-background-color: #F8FAFF;
+    -fx-padding: 10;
+    -fx-background-radius: 8;
+    -fx-border-color: #C6D5F5;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-border-color: #1A73E8;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: #F8FAFF;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #C6D5F5;
+    -fx-border-width: 1;
+    -fx-padding: 6;
+}
+
+.combo-box:focused {
+    -fx-border-color: #1A73E8;
+}
+
+/* Botón primario */
+.btn-primario {
+    -fx-background-color: linear-gradient(to bottom, #8BB5FF, #6DA3FF);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+
+.btn-primario:hover {
+    -fx-background-color: linear-gradient(to bottom, #9FC2FF, #7EB0FF);
+}
+
+.btn-primario:pressed {
+    -fx-background-color: linear-gradient(to bottom, #6DA3FF, #4D8BFF);
+}
+
+/* =========================================================
+   PANEL DERECHO – TABLA
+   ========================================================= */
+.tabla-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 15, 0, 0, 4);
+}
+
+/* Tabla */
+.tabla {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-border-color: #DDE7F5;
+    -fx-border-radius: 10;
+}
+
+/* Encabezados */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #A8C7FF, #8BB5FF);
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Filas */
+.table-view .table-row-cell {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2F3E46;
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #DCE7FF;
+}
+
+/* ScrollBar */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}

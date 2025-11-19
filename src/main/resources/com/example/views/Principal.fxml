@@ -41,7 +41,7 @@
 
 
     <left>
-        <VBox alignment="CENTER" prefHeight="454.0" prefWidth="130.0" styleClass="panel-lateral" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefHeight="620.0" prefWidth="166.0" styleClass="panel-lateral" BorderPane.alignment="CENTER">
             <children>
                 <Label styleClass="titulo-lateral" text="Clinica Central" wrapText="true" />
             </children>

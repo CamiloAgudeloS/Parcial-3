@@ -1,0 +1,78 @@
+/* =========================================================
+   ESTILOS GENERALES – VISTA PRINCIPAL
+   ========================================================= */
+
+/* Fondo principal del BorderPane */
+.principal-root {
+    -fx-background-color: #F6FAFC;
+}
+
+/* -------------------------------------
+   BARRA SUPERIOR
+   ------------------------------------- */
+.barra-superior {
+    -fx-background-color: linear-gradient(to bottom, #A8C7FF, #8BB5FF);
+    -fx-padding: 10 20;
+    -fx-spacing: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 10, 0, 0, 3);
+}
+
+/* Botones del menú superior */
+.btn-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2F3E46;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255,255,255,0.45);
+    -fx-border-width: 1.5;
+}
+
+/* Hover */
+.btn-menu:hover {
+    -fx-background-color: rgba(255,255,255,0.25);
+    -fx-text-fill: #1A73E8;
+}
+
+/* Click */
+.btn-menu:pressed {
+    -fx-background-color: rgba(255,255,255,0.40);
+}
+
+/* -------------------------------------
+   PANEL LATERAL
+   ------------------------------------- */
+.panel-lateral {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0, 0, 3);
+}
+
+/* Título lateral */
+.titulo-lateral {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A73E8;
+    -fx-padding: 10;
+}
+
+/* -------------------------------------
+   CENTRO DINÁMICO
+   ------------------------------------- */
+.contenedor-centro {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 15, 0, 0, 3);
+}
+
+/* -------------------------------------
+   BARRA INFERIOR
+   ------------------------------------- */
+.barra-inferior {
+    -fx-background-color: #E3E9EF;
+    -fx-min-height: 20;
+}
