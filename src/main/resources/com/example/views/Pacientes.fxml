@@ -9,88 +9,50 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox fx:id="rootClientes"
-      maxHeight="-Infinity" maxWidth="-Infinity"
-      minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="600.0" prefWidth="950.0"
-      styleClass="clientes-root"
-      xmlns="http://javafx.com/javafx/24.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.parcial3.Controllers.PacienteController">
+<HBox fx:id="rootClientes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="950.0" styleClass="clientes-root" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcial3.Controllers.PacienteController">
 
     <children>
 
         <!-- PANEL IZQUIERDO – FORMULARIO -->
-        <VBox prefWidth="350.0"
-              spacing="7.0"
-              styleClass="formulario-panel"
-              HBox.hgrow="ALWAYS">
+        <VBox prefHeight="600.0" prefWidth="475.0" spacing="7.0" styleClass="formulario-panel" HBox.hgrow="ALWAYS">
 
             <children>
 
-                <Label styleClass="titulo-formulario"
-                       text="Registro Datos Personales Paciente" />
+                <Label styleClass="titulo-formulario" text="Registro Datos Personales Paciente" />
 
                 <Label styleClass="label-campo" text="Nombre:*">
                     <VBox.margin>
-                        <Insets top="30.0"/>
+                        <Insets top="30.0" />
                     </VBox.margin>
                 </Label>
-                <TextField fx:id="txtNombre"
-                           promptText="ej:Pepe"
-                           styleClass="campo-texto"/>
+                <TextField fx:id="txtNombre" promptText="ej:Pepe" styleClass="campo-texto" />
 
-                <Label styleClass="label-campo" text="Apellido:*"/>
-                <TextField fx:id="txtApellido"
-                           promptText="ej:Gomez"
-                           styleClass="campo-texto"/>
+                <Label styleClass="label-campo" text="Apellido:*" />
+                <TextField fx:id="txtApellido" promptText="ej:Gomez" styleClass="campo-texto" />
 
-                <Label styleClass="label-campo" text="N.documento:*"/>
-                <TextField fx:id="txtDocumento"
-                           promptText="ej:1203029402"
-                           styleClass="campo-texto"/>
+                <Label styleClass="label-campo" text="N.documento:*" />
+                <TextField fx:id="txtDocumento" promptText="ej:1203029402" styleClass="campo-texto" />
 
-                <Label styleClass="label-campo" text="Edad:*"/>
-                <TextField fx:id="txtEdad"
-                           promptText="ej:19"
-                           styleClass="campo-texto"/>
+                <Label styleClass="label-campo" text="Edad:*" />
+                <TextField fx:id="txtEdad" promptText="ej:19" styleClass="campo-texto" />
 
-                <Label styleClass="label-campo" text="N.Carnet Medico"/>
-                <TextField fx:id="txtCarnet"
-                           promptText="ej:340460"
-                           styleClass="campo-texto"/>
+                <Label styleClass="label-campo" text="N.Carnet Medico" />
+                <TextField fx:id="txtCarnet" promptText="ej:340460" styleClass="campo-texto" />
 
-                <Label styleClass="label-campo" text="Enfermedades:*"/>
-                <TextField fx:id="txtEnfermedades"
-                           promptText="ej:Asma"
-                           styleClass="campo-texto"/>
+                <Label styleClass="label-campo" text="Enfermedades:*" />
+                <TextField fx:id="txtEnfermedades" promptText="ej:Asma" styleClass="campo-texto" />
 
-                <HBox alignment="CENTER"
-                      prefWidth="200.0"
-                      spacing="10.0"
-                      styleClass="botonera-formulario">
+                <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0" styleClass="botonera-formulario">
                     <VBox.margin>
-                        <Insets top="70.0"/>
+                        <Insets top="70.0" />
                     </VBox.margin>
 
                     <children>
-                        <Button mnemonicParsing="false"
-                                onAction="#onGuardar"
-                                prefHeight="35.0" prefWidth="101.0"
-                                styleClass="btn-formulario"
-                                text="Guardar"/>
+                        <Button mnemonicParsing="false" onAction="#onGuardar" prefHeight="35.0" prefWidth="101.0" styleClass="btn-formulario" text="Guardar" />
 
-                        <Button mnemonicParsing="false"
-                                onAction="#onActualizar"
-                                prefHeight="35.0" prefWidth="115.0"
-                                styleClass="btn-formulario"
-                                text="Actualizar"/>
+                        <Button mnemonicParsing="false" onAction="#onActualizar" prefHeight="35.0" prefWidth="115.0" styleClass="btn-formulario" text="Actualizar" />
 
-                        <Button mnemonicParsing="false"
-                                onAction="#onLimpiar"
-                                prefHeight="35.0" prefWidth="99.0"
-                                styleClass="btn-formulario"
-                                text="Limpiar"/>
+                        <Button mnemonicParsing="false" onAction="#onLimpiar" prefHeight="35.0" prefWidth="99.0" styleClass="btn-formulario" text="Limpiar" />
                     </children>
 
                 </HBox>
@@ -98,65 +60,41 @@
             </children>
 
             <padding>
-                <Insets left="5.0"/>
+                <Insets left="5.0" />
             </padding>
         </VBox>
 
         <!-- PANEL DERECHO – TABLA -->
-        <VBox alignment="CENTER"
-              prefWidth="570.0"
-              spacing="30.0"
-              styleClass="tabla-panel"
-              HBox.hgrow="ALWAYS">
+        <VBox alignment="CENTER" prefWidth="570.0" spacing="30.0" styleClass="tabla-panel" HBox.hgrow="ALWAYS">
 
             <children>
 
-                <Label styleClass="titulo-tabla"
-                       text="Tabla de Pacientes Clinica Central"/>
+                <Label styleClass="titulo-tabla" text="Tabla de Pacientes Clinica Central" />
 
-                <TableView fx:id="tablaPaciente"
-                           prefHeight="200.0"
-                           prefWidth="578.0"
-                           styleClass="tabla-clientes">
+                <TableView fx:id="tablaPaciente" prefHeight="200.0" prefWidth="578.0" styleClass="tabla-clientes">
 
                     <columns>
-                        <TableColumn fx:id="colNombre"
-                                     prefWidth="100.0"
-                                     text="Nombre"/>
+                        <TableColumn fx:id="colNombre" prefWidth="100.0" text="Nombre" />
 
-                        <TableColumn fx:id="colApellido"
-                                     prefWidth="100.0"
-                                     text="Apellido"/>
+                        <TableColumn fx:id="colApellido" prefWidth="100.0" text="Apellido" />
 
-                        <TableColumn fx:id="colDocumento"
-                                     prefWidth="100.0"
-                                     text="Documento"/>
+                        <TableColumn fx:id="colDocumento" prefWidth="100.0" text="Documento" />
 
-                        <TableColumn fx:id="colEdad"
-                                     prefWidth="53.6"
-                                     text="Edad"/>
+                        <TableColumn fx:id="colEdad" prefWidth="53.6" text="Edad" />
 
-                        <TableColumn fx:id="colCarnet"
-                                     prefWidth="113.6"
-                                     text="Carnet"/>
+                        <TableColumn fx:id="colCarnet" prefWidth="113.6" text="Carnet" />
 
-                        <TableColumn fx:id="colEnfermedades"
-                                     prefWidth="113.6"
-                                     text="Enfermedades"/>
+                        <TableColumn fx:id="colEnfermedades" prefWidth="113.6" text="Enfermedades" />
                     </columns>
 
                 </TableView>
 
-                <Button mnemonicParsing="false"
-                        onAction="#onEliminar"
-                        prefHeight="50.0" prefWidth="140.0"
-                        styleClass="btn-eliminar"
-                        text="Dar de Alta  Paciente"/>
+                <Button mnemonicParsing="false" onAction="#onEliminar" prefHeight="50.0" prefWidth="140.0" styleClass="btn-eliminar" text="Dar de Alta  Paciente" />
 
             </children>
 
             <HBox.margin>
-                <Insets left="10.0"/>
+                <Insets left="10.0" />
             </HBox.margin>
 
         </VBox>

@@ -14,9 +14,7 @@
 
     <children>
 
-        <!-- ==========================
-             PANEL IZQUIERDO (FORM)
-        ============================ -->
+
         <VBox prefHeight="100.0" prefWidth="400.0" styleClass="formulario-panel" HBox.hgrow="ALWAYS">
 
             <children>
@@ -57,9 +55,7 @@
             </children>
         </VBox>
 
-        <!-- ==========================
-             PANEL DERECHO (TABLA)
-        ============================ -->
+
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="550.0" styleClass="tabla-panel" HBox.hgrow="ALWAYS">
 
             <children>

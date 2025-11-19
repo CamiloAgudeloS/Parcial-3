@@ -1,15 +1,11 @@
-/* =========================================================
-   ESTILOS GENERALES – VISTA PRINCIPAL
-   ========================================================= */
+
 
 /* Fondo principal del BorderPane */
 .principal-root {
     -fx-background-color: #F6FAFC;
 }
 
-/* -------------------------------------
-   BARRA SUPERIOR
-   ------------------------------------- */
+
 .barra-superior {
     -fx-background-color: linear-gradient(to bottom, #A8C7FF, #8BB5FF);
     -fx-padding: 10 20;
@@ -42,9 +38,6 @@
     -fx-background-color: rgba(255,255,255,0.40);
 }
 
-/* -------------------------------------
-   PANEL LATERAL
-   ------------------------------------- */
 .panel-lateral {
     -fx-background-color: #ffffff;
     -fx-padding: 20;
@@ -59,9 +52,7 @@
     -fx-padding: 10;
 }
 
-/* -------------------------------------
-   CENTRO DINÁMICO
-   ------------------------------------- */
+
 .contenedor-centro {
     -fx-background-color: #FFFFFF;
     -fx-padding: 20;
@@ -69,9 +60,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 15, 0, 0, 3);
 }
 
-/* -------------------------------------
-   BARRA INFERIOR
-   ------------------------------------- */
+
 .barra-inferior {
     -fx-background-color: #E3E9EF;
     -fx-min-height: 20;

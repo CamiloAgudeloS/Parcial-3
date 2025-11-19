@@ -90,9 +90,7 @@
     -fx-background-color: linear-gradient(to bottom, #6DA3FF, #4D8BFF);
 }
 
-/* =========================================================
-   PANEL DERECHO – TABLA
-   ========================================================= */
+
 .tabla-panel {
     -fx-background-color: #FFFFFF;
     -fx-padding: 20;
